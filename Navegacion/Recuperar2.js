@@ -13,10 +13,15 @@ export default function Recuperar() {
       <Image style={styles.ImageLog} source={require("../images/image.png")} />
 
       <Text style={styles.txtTitulo}>Recuperar Cuenta</Text>
-      <Text style={styles.txtSubtitulo}>Ingrese su correo electrónico para recuperar cuenta:</Text>
+      <Text style={styles.txtSubtitulo}>Recuperar su cuenta</Text>
      
       <TextInput
-        placeholder="multimedios@gmail.com"
+        placeholder="Contraseña nueva"
+        style={styles.txtInput}
+      ></TextInput>
+
+      <TextInput
+        placeholder="Confirmar contraseña Contraseña"
         style={styles.txtInput}
       ></TextInput>
 
@@ -27,7 +32,7 @@ export default function Recuperar() {
       </TouchableOpacity>
 
       <TouchableOpacity
-         onPress={()=> navigation.navigate("Recuperar2")}
+
       >
         <LinearGradient
           colors={["#00C1BB", "#005B58"]}
@@ -35,7 +40,7 @@ export default function Recuperar() {
           end={{ x: 1, y: 1 }}
           style={styles.btnLogin}
         >
-          <Text style={styles.txtLogin}>Continuar</Text>
+          <Text style={styles.txtLogin}>Restablecer</Text>
         </LinearGradient>
       </TouchableOpacity>
 
@@ -85,7 +90,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     paddingLeft: 30,
-    marginTop: 50,
+    marginTop: 30,
     marginLeft: 35,
     borderColor: "gray",
     color: "#000000",
@@ -101,7 +106,7 @@ const styles = StyleSheet.create({
 
   txtPass: {
     textAlign: "right",
-    marginTop: 20,
+    marginTop: 15,
     marginRight: 50,
     color: "#00C1BB",
     fontSize: 18,
@@ -111,7 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     width: 219,
     height: 53,
-    marginTop: 40,
+    marginTop: 30,
     marginLeft: 100,
     paddingTop: 10,
   },

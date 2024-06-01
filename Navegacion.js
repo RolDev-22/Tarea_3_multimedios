@@ -5,6 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "./Navegacion/Home";
 import Login from "./Navegacion/Login";
+import Recuperar from "./Navegacion/Recuperar";
+import Recuperar2 from "./Navegacion/Recuperar2"; 
 
 //PARA CUANDO SE REQUIERE EL MENÚ DE NAVEGACIÓN ABAJAO SE UTILIZA ESTE CÓDIGO
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -41,9 +43,15 @@ const Stack = createStackNavigator();
 function Stacks() {
   return (
     <Stack.Navigator initialRouteName="Login">
+      
       <Stack.Screen name="Login" component={Login} />
 
       <Stack.Screen name="Home" component={Home} />
+      
+      <Stack.Screen name="Recuperar" component={Recuperar} />
+
+      <Stack.Screen name="Recuperar2" component={Recuperar2} />
+
     </Stack.Navigator>
   );
 }

@@ -1,9 +1,16 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import {StyleSheet, Text, Image, TextInput, TouchableOpacity, View} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { useNavigation } from "@react-navigation/native"; 
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
   const navigation = useNavigation();
@@ -24,13 +31,15 @@ export default function Login() {
         style={styles.txtInput}
       ></TextInput>
 
-      <TouchableOpacity>
-        <Text style={styles.txtPass}>¿Has olvidado su contraseña?</Text>
+      <TouchableOpacity
+        onPress={()=> navigation.navigate("Recuperar")}
+      >
+        <Text style={styles.txtPass}>
+          ¿Has olvidado su contraseña?
+        </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={()=> navigation.navigate("Home")}
-      >
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
         <LinearGradient
           colors={["#00C1BB", "#005B58"]}
           start={{ x: 0, y: 0 }}
@@ -49,11 +58,9 @@ export default function Login() {
       </TouchableOpacity>
 
       <StatusBar style="auto" />
-      
     </View>
   ); //cierre de return
 } //cierre de duntion App
-
 
 const styles = StyleSheet.create({
   container: {
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
   },
 
   ImageLog: {
-    width:'100%',
+    width: "100%",
   },
 
   txtTitulo: {
@@ -97,8 +104,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 2,
     shadowRadius: 2,
     elevation: 4,
-    fontSize:17,
-    textDecorationLine: "underline"
+    fontSize: 17,
+    textDecorationLine: "underline",
   },
 
   txtPass: {
@@ -127,8 +134,8 @@ const styles = StyleSheet.create({
 
   txtCuenta: {
     textAlign: "center",
-    justifyContent:"center",
-    marginTop:20,
+    justifyContent: "center",
+    marginTop: 20,
     color: "#00C1BB",
     fontSize: 15,
     alignItems: "center",
