@@ -1,66 +1,77 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import {StyleSheet, Text, Image, TextInput, TouchableOpacity, View} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { useNavigation } from "@react-navigation/native"; 
+import { useNavigation } from "@react-navigation/native";
 
-export default function Recuperar2() {
+export default function Registrarse() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Image style={styles.ImageLog} source={require("../images/image.png")} />
 
-      <Text style={styles.txtTitulo}>Recuperar Cuenta</Text>
-      <Text style={styles.txtSubtitulo}>Recuperar su cuenta</Text>
-     
+      <Text style={styles.txtTitulo}>Crear cuenta</Text>
+      <Text style={styles.txtSubtitulo}>Ingrese los datos solicitados</Text>
+
       <TextInput
-        placeholder="Contraseña nueva"
-        secureTextEntry={true}
+        placeholder="Nombre completo"
         style={styles.txtInput}
       ></TextInput>
 
       <TextInput
-        placeholder="Confirmar contraseña Contraseña"
-        secureTextEntry={true}
+        placeholder="Correo electrónico"
         style={styles.txtInput}
       ></TextInput>
 
-      <TouchableOpacity
-       onPress={()=> navigation.navigate("Login")}
-      >
-        <Text style={styles.txtPass}>Iniciar Sesion</Text>
-      </TouchableOpacity>
+      <TextInput
+        placeholder="Contraseña"
+        secureTextEntry={true}
+        style={styles.txtInput}
+      ></TextInput>
 
       <TouchableOpacity
         onPress={()=> navigation.navigate("Login")}
       >
+        <Text style={styles.txtPass}>
+          Iniciar Sesión
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+       onPress={() => navigation.navigate("Login")}
+       >
         <LinearGradient
           colors={["#00C1BB", "#005B58"]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.btnLogin}
         >
-          <Text style={styles.txtLogin}>Restablecer</Text>
+          <Text style={styles.txtLogin}>Registrarse</Text>
         </LinearGradient>
       </TouchableOpacity>
 
       {/* <Button title='Iniciar Sesion' style={styles.btnLogin} /> */}
 
-      <Text style={styles.txtCuenta}>No tiene cuenta</Text>
+      <Text style={styles.txtCuenta}>Ya tiene una cuenta</Text>
       <TouchableOpacity
-       onPress={() => navigation.navigate("Registrarse")}
+        onPress={()=> navigation.navigate("Recuperar")}
       >
-        <Text style={styles.txtRegistrarse}>Registrarse</Text>
+        <Text style={styles.txtRegistrarse}>¿Has olvidado tu contraseña?</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
-      
     </View>
   ); //cierre de return
 } //cierre de duntion App
-
 
 const styles = StyleSheet.create({
   container: {
@@ -69,11 +80,11 @@ const styles = StyleSheet.create({
   },
 
   ImageLog: {
-    width:'100%',
+    width: "100%",
   },
 
   txtTitulo: {
-    fontSize: 55,
+    fontSize: 50,
     fontWeight: "bold",
     color: "#34434D",
     textAlign: "left",
@@ -94,7 +105,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     paddingLeft: 30,
-    marginTop: 30,
+    marginTop: 20,
     marginLeft: 35,
     borderColor: "gray",
     color: "#000000",
@@ -104,13 +115,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 2,
     shadowRadius: 2,
     elevation: 4,
-    fontSize:17,
-    textDecorationLine: "underline"
+    fontSize: 17,
+    textDecorationLine: "underline",
   },
 
   txtPass: {
     textAlign: "right",
-    marginTop: 15,
+    marginTop: 20,
     marginRight: 50,
     color: "#00C1BB",
     fontSize: 18,
@@ -120,7 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     width: 219,
     height: 53,
-    marginTop: 30,
+    marginTop: 40,
     marginLeft: 100,
     paddingTop: 10,
   },
@@ -134,8 +145,8 @@ const styles = StyleSheet.create({
 
   txtCuenta: {
     textAlign: "center",
-    justifyContent:"center",
-    marginTop:20,
+    justifyContent: "center",
+    marginTop: 20,
     color: "#00C1BB",
     fontSize: 15,
     alignItems: "center",

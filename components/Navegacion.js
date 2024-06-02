@@ -3,10 +3,11 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Home from "./Navegacion/Home";
-import Login from "./Navegacion/Login";
-import Recuperar from "./Navegacion/Recuperar";
-import Recuperar2 from "./Navegacion/Recuperar2"; 
+import Home from "../Navegacion/Home";
+import Login from "../Navegacion/Login";
+import Recuperar from "../Navegacion/Recuperar";
+import Recuperar2 from "../Navegacion/Recuperar2"; 
+import Registrarse from "../Navegacion/Registrar";
 
 //PARA CUANDO SE REQUIERE EL MENÚ DE NAVEGACIÓN ABAJAO SE UTILIZA ESTE CÓDIGO
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -51,6 +52,8 @@ function Stacks() {
       <Stack.Screen name="Recuperar" component={Recuperar} />
 
       <Stack.Screen name="Recuperar2" component={Recuperar2} />
+
+      <Stack.Screen name="Registrarse" component={Registrarse} />
 
     </Stack.Navigator>
   );

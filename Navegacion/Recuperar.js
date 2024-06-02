@@ -42,7 +42,9 @@ export default function Recuperar() {
       {/* <Button title='Iniciar Sesion' style={styles.btnLogin} /> */}
 
       <Text style={styles.txtCuenta}>No tiene cuenta</Text>
-      <TouchableOpacity>
+      <TouchableOpacity
+       onPress={() => navigation.navigate("Registrarse")}
+      >
         <Text style={styles.txtRegistrarse}>Registrarse</Text>
       </TouchableOpacity>
 

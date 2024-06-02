@@ -17,7 +17,7 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.ImageLog} source={require("../images/image.png")} />
+      <Image style={styles.ImageLog} source={require("../Images/image.png")} />
 
       <Text style={styles.txtTitulo}>Bienvenidos!</Text>
       <Text style={styles.txtSubtitulo}>Ingresar con tu cuenta</Text>
@@ -53,7 +53,9 @@ export default function Login() {
       {/* <Button title='Iniciar Sesion' style={styles.btnLogin} /> */}
 
       <Text style={styles.txtCuenta}>No tiene cuenta</Text>
-      <TouchableOpacity>
+      <TouchableOpacity
+       onPress={() => navigation.navigate("Registrarse")}
+      >
         <Text style={styles.txtRegistrarse}>Registrarse</Text>
       </TouchableOpacity>
 
