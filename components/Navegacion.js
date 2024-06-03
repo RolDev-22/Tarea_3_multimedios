@@ -45,15 +45,15 @@ function Stacks() {
   return (
     <Stack.Navigator initialRouteName="Login">
       
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Login" component={Login} options={{headerBackTitleVisible:false}} />
 
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Home" component={Home} options={{headerBackTitleVisible:false}}/>
       
-      <Stack.Screen name="Recuperar" component={Recuperar} />
+      <Stack.Screen name="Recuperar" component={Recuperar} options={{headerBackTitleVisible:false}}/>
 
-      <Stack.Screen name="Recuperar2" component={Recuperar2} />
+      <Stack.Screen name="Recuperar2" component={Recuperar2} options={{headerBackTitleVisible:false}}/>
 
-      <Stack.Screen name="Registrarse" component={Registrarse} />
+      <Stack.Screen name="Registrarse" component={Registrarse} options={{headerBackTitleVisible:false}}/>
 
     </Stack.Navigator>
   );

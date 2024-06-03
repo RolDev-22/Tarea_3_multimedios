@@ -10,7 +10,7 @@ export default function Recuperar() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.ImageLog} source={require("../images/image.png")} />
+      <Image style={styles.ImageLog} source={require("../Images/image.png")} />
 
       <Text style={styles.txtTitulo}>Recuperar Cuenta</Text>
       <Text style={styles.txtSubtitulo}>Ingrese su correo electrónico para recuperar cuenta:</Text>

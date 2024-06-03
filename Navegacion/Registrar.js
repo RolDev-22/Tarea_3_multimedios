@@ -17,7 +17,7 @@ export default function Registrarse() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.ImageLog} source={require("../images/image.png")} />
+      <Image style={styles.ImageLog} source={require("../Images/image.png")} />
 
       <Text style={styles.txtTitulo}>Crear cuenta</Text>
       <Text style={styles.txtSubtitulo}>Ingrese los datos solicitados</Text>

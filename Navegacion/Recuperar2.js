@@ -10,7 +10,7 @@ export default function Recuperar2() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.ImageLog} source={require("../images/image.png")} />
+      <Image style={styles.ImageLog} source={require("../Images/image.png")} />
 
       <Text style={styles.txtTitulo}>Recuperar Cuenta</Text>
       <Text style={styles.txtSubtitulo}>Recuperar su cuenta</Text>
