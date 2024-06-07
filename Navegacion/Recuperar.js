@@ -23,7 +23,7 @@ export default function Recuperar() {
       <TouchableOpacity
        onPress={()=> navigation.navigate("Login")}
       >
-        <Text style={styles.txtPass}>Iniciar Sesion</Text>
+        <Text style={styles.txtSesion}>Iniciar Sesion</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -74,20 +74,21 @@ const styles = StyleSheet.create({
   },
 
   txtSubtitulo: {
+    width:"70%",
     fontSize: 20,
     fontWeight: "light",
     color: "gray",
     textAlign: "left",
     paddingLeft: 30,
-    marginTop: 20,
+    marginTop: 60,
   },
 
   txtInput: {
-    width: "85%",
+    width: "75%",
     height: 60,
     borderRadius: 30,
     paddingLeft: 30,
-    marginTop: 50,
+    marginTop: 30,
     marginLeft: 35,
     borderColor: "gray",
     color: "#000000",
@@ -101,12 +102,12 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline"
   },
 
-  txtPass: {
+  txtSesion: {
     textAlign: "right",
-    marginTop: 20,
+    marginTop: 15,
     marginRight: 50,
     color: "#00C1BB",
-    fontSize: 18,
+    fontSize: 16,
   },
 
   btnLogin: {
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     width: 219,
     height: 53,
     marginTop: 40,
-    marginLeft: 100,
+    marginLeft: 110,
     paddingTop: 10,
   },
 

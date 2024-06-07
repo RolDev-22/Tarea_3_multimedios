@@ -9,8 +9,8 @@ const Inicio = () => {
   const navigation = useNavigation();
 
     return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Inicio: Hola Equipo!</Text>
+    <View style={ styles.container}>
+      <Text style={styles.txtTitulo}>PAGINA DE INICIO</Text>
 
       <TouchableOpacity
         onPress={()=> navigation.navigate("Login")}>
@@ -34,11 +34,13 @@ export default Inicio;
 
 const styles = StyleSheet.create({
   container: {
+    height:"100%",
       backgroundColor: '#ffffff',
       alignItems: 'center',
+      justifyContent:"space-evenly"
     },
     txtTitulo: {
-      fontSize: 80,
+      fontSize: 50,
       fontWeight: 'bold',
       color: '#34434D',
   

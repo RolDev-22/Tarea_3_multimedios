@@ -11,9 +11,41 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
-export default function Registrarse() {
+import appFirebase from '../FirebaseConfig/ConfigFirebase';
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+
+const db = getFirestore(appFirebase)
+
+export default function Registrarse(props) {
   const navigation = useNavigation();
+
+  const inicioEstado = {
+    nombreCompleto:'',
+    email:'',
+    clave:'',
+  }
+  
+  const [estado, setEstado] = useState(inicioEstado);
+  
+  const HandleChangeText = (value,name) => {
+    setEstado({...estado, [name]:value})
+  }
+
+  const RegistarUsuario = async()=>{
+    //console.log(estado)
+    try {
+      await addDoc(collection(db, 'Usuarios'),{...estado})
+
+      Alert.alert('Alerta', 'El usuario se registró con éxito')
+
+      props.navigation.navigate('Login')
+     
+    } catch  {
+      console.error(error)
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -25,17 +57,23 @@ export default function Registrarse() {
       <TextInput
         placeholder="Nombre completo"
         style={styles.txtInput}
+        onChangeText={(value) => HandleChangeText(value,'nombreCompleto')}
+        value={estado.nombreCompleto}
       ></TextInput>
 
       <TextInput
         placeholder="Correo electrónico"
         style={styles.txtInput}
+        onChangeText={(value) => HandleChangeText(value,'email')}
+        value={estado.email}
       ></TextInput>
 
       <TextInput
         placeholder="Contraseña"
         secureTextEntry={true}
         style={styles.txtInput}
+        onChangeText={(value) => HandleChangeText(value,'clave')}
+        value={estado.clave}
       ></TextInput>
 
       <TouchableOpacity
@@ -47,7 +85,8 @@ export default function Registrarse() {
       </TouchableOpacity>
 
       <TouchableOpacity 
-       onPress={() => navigation.navigate("Login")}
+      //  onPress={() => navigation.navigate("Login")}
+       onPress={RegistarUsuario}
        >
         <LinearGradient
           colors={["#00C1BB", "#005B58"]}
@@ -58,8 +97,6 @@ export default function Registrarse() {
           <Text style={styles.txtLogin}>Registrarse</Text>
         </LinearGradient>
       </TouchableOpacity>
-
-      {/* <Button title='Iniciar Sesion' style={styles.btnLogin} /> */}
 
       <Text style={styles.txtCuenta}>Ya tiene una cuenta</Text>
       <TouchableOpacity
@@ -131,7 +168,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     width: 219,
     height: 53,
-    marginTop: 40,
+    marginTop: 30,
     marginLeft: 100,
     paddingTop: 10,
   },

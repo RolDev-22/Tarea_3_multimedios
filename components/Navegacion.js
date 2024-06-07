@@ -6,7 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Navegacion/Home";
 import Login from "../Navegacion/Login";
 import Recuperar from "../Navegacion/Recuperar";
-import Recuperar2 from "../Navegacion/Recuperar2"; 
+import Recuperar2 from "../Navegacion/Recuperar2";
 import Registrarse from "../Navegacion/Registrar";
 
 //PARA CUANDO SE REQUIERE EL MENÚ DE NAVEGACIÓN ABAJAO SE UTILIZA ESTE CÓDIGO
@@ -37,24 +37,41 @@ import Registrarse from "../Navegacion/Registrar";
 //   );
 // }
 
-
 //CODIGO PARA NAVEGAR DIRECTAMENTE AL PRECIONAR BOTONES O ATAJOS
 
 const Stack = createStackNavigator();
 function Stacks() {
   return (
     <Stack.Navigator initialRouteName="Login">
-      
-      <Stack.Screen name="Login" component={Login} options={{headerBackTitleVisible:false}} />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerBackTitleVisible: false, headerShown: false }}
+      />
 
-      <Stack.Screen name="Home" component={Home} options={{headerBackTitleVisible:false}}/>
-      
-      <Stack.Screen name="Recuperar" component={Recuperar} options={{headerBackTitleVisible:false}}/>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{ headerBackTitleVisible: false, headerShown: false }}
+      />
 
-      <Stack.Screen name="Recuperar2" component={Recuperar2} options={{headerBackTitleVisible:false}}/>
+      <Stack.Screen
+        name="Recuperar"
+        component={Recuperar}
+        options={{ headerBackTitleVisible: false, headerShown: false }}
+      />
 
-      <Stack.Screen name="Registrarse" component={Registrarse} options={{headerBackTitleVisible:false}}/>
+      <Stack.Screen
+        name="Recuperar2"
+        component={Recuperar2}
+        options={{ headerBackTitleVisible: false, headerShown: false }}
+      />
 
+      <Stack.Screen
+        name="Registrarse"
+        component={Registrarse}
+        options={{ headerBackTitleVisible: false }}
+      />
     </Stack.Navigator>
   );
 }

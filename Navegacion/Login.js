@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
 
   ImageLog: {
     width: "100%",
+    height:"30%",
   },
 
   txtTitulo: {
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
 
   txtPass: {
     textAlign: "right",
-    marginTop: 20,
+    marginTop: 30,
     marginRight: 50,
     color: "#00C1BB",
     fontSize: 18,
@@ -122,8 +123,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     width: 219,
     height: 53,
-    marginTop: 40,
-    marginLeft: 100,
+    marginTop: 60,
+    marginLeft: 110,
     paddingTop: 10,
   },
 
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
   txtCuenta: {
     textAlign: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginTop: 50,
     color: "#00C1BB",
     fontSize: 15,
     alignItems: "center",

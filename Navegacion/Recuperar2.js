@@ -120,8 +120,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     width: 219,
     height: 53,
-    marginTop: 30,
-    marginLeft: 100,
+    marginTop: 40,
+    marginLeft: 110,
     paddingTop: 10,
   },
 
